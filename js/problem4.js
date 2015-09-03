@@ -27,3 +27,28 @@
 */
 
 // Write your JavaScript here
+function changeElementText(element, answer) {
+    $(element).text(answer);
+}
+function listContains(list, element) {
+    return list.indexOf(element) > -1;
+}
+function countFirstValidNotes() {
+    var validNotes = [5, 10, 20, 50, 100, 500];
+    var noteString = ""
+    var sum = 0;
+    var foundBad = false;
+    for (var i = 0; i < arguments.length; i++) {
+        noteString += arguments[i].toString() + " , ";
+        if (foundBad == false && listContains(validNotes, arguments[i])) {
+            sum += arguments[i];
+        } else {
+            foundBad = true;
+        };
+    }
+    noteString = noteString.substring(0, noteString.length - 2);
+    changeElementText("#noteValues", noteString);
+    changeElementText("#finalNoteCount", sum);
+}
+
+
