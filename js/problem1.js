@@ -40,7 +40,6 @@ function kiteGame(numberOfKites) {
         } else {
             answer += i.toString() + " ";
         }
-        console.log(answer);
     }
 
     changeElementText("#answer", answer);
